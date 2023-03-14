@@ -1,0 +1,46 @@
+﻿@model ERP.Models.LoginModel
+@{
+    ViewData["Title"] = "AdminLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row" style="margin:20px;">
+    <div class=" col-sm-3">
+
+    </div>
+    <div class="card border-light mb-3 col-sm-6">
+        <div class="" style="margin:20px; text-align:center"><h1>ADMIN LOGIN</h1></div>
+        <div class="card-body">
+            <form asp-action="AdminLogin">
+                <div class="form-group">
+                    <div class="form-floating mb-3">
+                        <input type="email" asp-for="Email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">EMAIL ID</label>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="Password" asp-for="Password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">PASSWORD</label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-info">SIGN IN</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class=" col-sm-3">
+
+    </div>
+</div>
+
+

@@ -1,0 +1,57 @@
+﻿@model ERP.Models.AdminModel
+@{
+    ViewData["Title"] = "AdminRegi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="margin:20px;">
+    <div class=" col-sm-3">
+
+    </div>
+    <div class="card border-light mb-3 col-sm-6" >
+        <div class="" style="margin:20px; text-align:center"><h1>ADMIN REGISTRATION</h1></div>
+        <div class="card-body">
+            <form asp-action="AdminRegi">
+                <div class="form-group">
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="AdminName" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">ADMIN NAME</label>
+                        <span asp-validation-for="AdminName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" asp-for="Email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">EMAIL ID</label>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="Password" asp-for="Password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">PASSWORD</label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="Password" asp-for="RePassword" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">CONFIRM PASSWORD</label>
+                        <span asp-validation-for="RePassword" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-info">SIGN UP</button>
+                    </div>
+                </div>
+            </form>
+            @if (TempData["msg"] != null)
+            {
+                <script>
+ alert('@TempData["msg"].ToString();');
+ window.location.href = "@Url.Action("AdminLogin","Admin")";
+                </script>
+            }
+        </div>
+    </div>
+    
+    <div class=" col-sm-3">
+
+    </div>
+</div>

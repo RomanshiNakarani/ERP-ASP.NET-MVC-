@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ERP</title>
+   
+    <link rel="stylesheet" href="~/content/bootstraptheam.css"/>
+   
+    <style>
+
+       
+        .fixed-header, .fixed-footer {
+            width: 100%;
+            position: fixed;
+        }
+
+        .fixed-header {
+            top: 0;
+        }
+
+        .fixed-footer {
+            bottom: 0;
+        }
+        body {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+
+
+        .card{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 50%;
+            border:none;
+            
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="fixed-header navbar navbar-expand-lg navbar-dark bg-primary border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ERP</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
+                                HOME
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ADMIN</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-action="AdminLogin" asp-controller="Admin">ADMIN LOGIN</a>
+                                <a class="dropdown-item" asp-action="AdminRegi" asp-controller="Admin">ADMIN REGISTRATION</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">STUDENT</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-action="StudentLogin" asp-controller="Student">STUDENT LOGIN</a>
+                                <a class="dropdown-item" asp-action="StudentRegi" asp-controller="Student">STUDENT REGISTRATION</a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="fixed-footer border-top footer text-muted bg-dark">
+        <div class="container">
+            &copy; 2023 - ERP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
